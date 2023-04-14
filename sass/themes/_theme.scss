@@ -1,0 +1,54 @@
+//Khai báo biến các giá trị của html
+// Màu sắc chữ (color)
+$c0-text-primary: #2a73dd;
+$c1-text-primary: #f5f9fe;
+$c0-text-dark: #000;
+$c0-text-light: #fff;
+$c0-text-warning: orange;
+//Kích thước chữ (font-size)
+$fs-base: 16px;
+$fs-xl: 18px;
+$fs-2xl: 20px;
+$fs-3xl: 30px;
+$fs-4xl: 40px;
+$fs-5xl: 50px;
+$fs-6xl: 60px;
+$fs-7xl: 70px;
+//Độ đậm nhạt của chữ (font-weight)
+$fw-line: 300;
+$fw-normal: 400;
+$fw-semibold: 600;
+$fw-bold: 700;
+//backgrount
+$bg-c0-primary: #2a73dd;
+$bg-c1-primary: #f5f9fe;
+$bg-c0-dark: #000;
+$bg-c0-light: #fff;
+$bg-none: transparent;
+//Khi code scss thì không bao giờ quay về css code nửa 
+// mixin: Khi thấy các cụm css nào lặp đi lặp nhiều lần thì ta có thể định nghĩa mixin
+
+@mixin text($fs: $fs-base, $fw: $fw-normal, $c: $c0-text-dark) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $c;
+}
+
+@mixin button($bg, $pd, $bd, $br, $fs, $fw, $c, $bg-hover, $c-hover) {
+    background: $bg;
+    padding: $pd;
+    border: $bd;
+    border-radius: $br;
+    font-size: $fs;
+    font-weight: $fw;
+    color: $c;
+    cursor: pointer;
+    &:hover {
+        background: $bg-hover;
+        color: $c-hover;
+    }
+
+    // box-shadow: 0 3px 6px #c9d8f4;
+    // letter-spacing: 0.03rem;
+    // transition: .5s;
+}

@@ -1,0 +1,442 @@
+@charset "UTF-8";
+body {
+  --color-primary: #2a73dd;
+  --bg-primary: #fff;
+}
+
+body.dark {
+  --color-primary: #fff;
+  --bg-primary: #000;
+}
+
+/*----------- Css utility ------------*/
+/* Vòng lặp và mảng trong scss*/
+.bg-primary {
+  background: #2a73dd;
+}
+
+.text-primary {
+  color: #2a73dd;
+}
+
+.bg-dark {
+  background: #000;
+}
+
+.text-dark, .carousel .container .about .description {
+  color: #000;
+}
+
+.bg-light {
+  background: #fff;
+}
+
+.text-light {
+  color: #fff;
+}
+
+.m-0 {
+  margin: 0rem;
+}
+
+.mx-0 {
+  margin-left: 0rem;
+  margin-right: 0rem;
+}
+
+.my-0 {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+.p-0 {
+  padding: 0rem;
+}
+
+.px-0 {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+.py-0 {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+
+.m-1 {
+  margin: 0.25rem;
+}
+
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.m-2, .products .container .row .col .card {
+  margin: 0.5rem;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.p-2, .products .container .row .col .card .card-body {
+  padding: 0.5rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.m-3 {
+  margin: 0.75rem;
+}
+
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.m-4 {
+  margin: 1rem;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.m-5 {
+  margin: 1.25rem;
+}
+
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.my-5, .products .product-title {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: var(--bg-primary);
+  padding: 15px 0;
+  box-shadow: 0 2px 4px #e2ebfc;
+}
+@media only screen and (max-width: 768px) {
+  .header {
+    background-color: red;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .header {
+    background-color: blue;
+  }
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+}
+.header .container .logo {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.header .container .menu a {
+  color: #000;
+  font-weight: 300;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 0 15px;
+  position: relative;
+}
+.header .container .menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  transform: scaleX(0);
+  background-color: #2a73dd;
+}
+.header .container .menu a:hover {
+  color: #2a73dd;
+}
+.header .container .menu a:hover::after {
+  transform: scaleX(1);
+  transition: transform 0.3s;
+}
+@media only screen and (max-width: 576px) {
+  .header .container .menu {
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .header .container .menu a {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}
+
+.carousel {
+  background-color: #f5f9fe;
+  margin-top: 5px;
+  height: 600px;
+}
+.carousel .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.carousel .container .about {
+  width: 50%;
+}
+.carousel .container .about .product-title {
+  font-size: 60px;
+  font-weight: 600;
+  color: #2a73dd;
+}
+.carousel .container .about .product-desc {
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.5;
+}
+.carousel .container .about .description {
+  margin-top: 15px;
+  line-height: 1.5;
+}
+.carousel .container .about .btn-shop {
+  background: transparent;
+  padding: 13.5px 44px;
+  border: 2px solid #2a73dd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2a73dd;
+  cursor: pointer;
+  letter-spacing: 0.03rem;
+  box-shadow: 0 3px 6px #c9d8f4;
+  transition: background 0.3s;
+}
+.carousel .container .about .btn-shop:hover {
+  background: #2a73dd;
+  color: #000;
+}
+.carousel .container .about .btn-info {
+  background: linear-gradient(120deg, #60a4f4, #2a73dd);
+  padding: 15.5px 46px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 0.03rem;
+  transition: 0.5s;
+}
+.carousel .container .about .btn-info:hover {
+  background: linear-gradient(120deg, #aecdf1, #2a73dd);
+  color: #fff;
+}
+.carousel .container .thumbnail {
+  width: 50%;
+}
+.carousel .container .thumbnail img {
+  height: 400px;
+}
+
+.products .product-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  color: #000;
+}
+.products .container .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.products .container .row .col {
+  width: 33.3333333333%;
+}
+.products .container .row .col .item-0 {
+  animation: fadeDown;
+  animation-duration: 1s;
+}
+.products .container .row .col .item-1 {
+  animation: fadeDown;
+  animation-duration: 2s;
+}
+.products .container .row .col .item-2 {
+  animation: fadeDown;
+  animation-duration: 3s;
+}
+.products .container .row .col .item-3 {
+  animation: fadeDown;
+  animation-duration: 4s;
+}
+.products .container .row .col .item-4 {
+  animation: fadeDown;
+  animation-duration: 5s;
+}
+.products .container .row .col .item-5 {
+  animation: fadeDown;
+  animation-duration: 6s;
+}
+.products .container .row .col .card {
+  box-shadow: 6px 6px 12px #e2ebfc, -6px -6px 12px #fff;
+}
+.products .container .row .col .card img {
+  width: 100%;
+}
+.products .container .row .col .card .card-body .name-price {
+  display: flex;
+  justify-content: space-between;
+}
+.products .container .row .col .card .card-body .name-price .name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+}
+.products .container .row .col .card .card-body .name-price .price {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+}
+.products .container .row .col .card .card-body .rating-button {
+  display: flex;
+  justify-content: space-between;
+}
+.products .container .row .col .card .card-body .rating-button .rating i {
+  color: orange;
+}
+.products .container .row .col .card .card-body .rating-button .btn-buy {
+  background: #f5f9fe;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  letter-spacing: 0.03rem;
+  font-size: 10px;
+  font-weight: 600;
+  color: #2a73dd;
+  box-shadow: 2px 2px 4px #e2ebfc, -2px -2px 4px #fff;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.products .container .row .col .card .card-body .rating-button .btn-buy i {
+  color: #2a73dd;
+}
+
+@keyframes fadeDown {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

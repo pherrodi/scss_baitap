@@ -1,0 +1,67 @@
+@use '../themes/theme';
+
+// @import '../themes/theme';
+
+
+body{
+    --color-primary: #{$c0-text-primary};
+    --bg-primary: #{$bg-c0-light};
+}
+
+body.dark {
+    --color-primary: #{$c0-text-light};
+    --bg-primary: #{$bg-c0-dark};
+}
+
+
+
+/*----------- Css utility ------------*/
+
+// .text-primary {
+//     color: $c0-text-primary;
+//     font-size:$fs-base;
+//     font-weight: $fw-normal;
+// }
+// .text-dark {
+//     color: $c0-text-dark;
+//     font-size:$fs-base;
+//     font-weight: $fw-normal;
+// }
+
+/* Vòng lặp và mảng trong scss*/
+$colors: ("primary":#2a73dd, "dark":#000, "light":#fff);
+@each $key,$value in $colors {
+    .bg-#{$key} {
+        background: $value;
+    }
+    .text-#{$key} {
+        color: $value;
+    }
+}
+//Định nghĩa các class margin - pading dựa vào vòng lặp và mảng
+$spacer:1rem;
+$arr-spacing : ("0":0,"1": 0.25,"2": 0.5,"3": 0.75, "4":1,"5":1.25);
+@each $key,$value in $arr-spacing  {
+    .m-#{$key}{
+        margin: $value * $spacer;
+    }
+    .mx-#{$key}{
+        margin-left: $value * $spacer;
+        margin-right: $value * $spacer;
+    }
+    .my-#{$key} {
+        margin-top: $value * $spacer;
+        margin-bottom: $value * $spacer;
+    }
+    .p-#{$key}{
+        padding: $value * $spacer;
+    }
+    .px-#{$key}{
+        padding-left: $value * $spacer;
+        padding-right: $value * $spacer ;
+    }
+    .py-#{$key} {
+        padding-top: $value * $spacer;
+        padding-bottom: $value * $spacer;
+    }
+}
